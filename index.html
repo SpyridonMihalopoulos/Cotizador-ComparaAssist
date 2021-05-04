@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<title>Cotizador Compara Assist</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Cotizador automatizado de las proncopales coberturas ofrecidad por Compara Assist">
+
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	
+	<body> 
+
+		<header></header>
+
+		<main class="container">
+
+			<div class="Cotizador">
+
+				<form class="cotizador_form">
+					
+					<label id="destino">
+						<span>Destino:</span>
+						<select id="lista-destinos">
+							<option value="Mundial">Mundial</option>
+							<option value="Europa">Europa</option>
+							<option value="Chile">Chile</option>
+							<option value="Costa Rica">Costa	Rica</option>
+							<option value="Cirugía">Cirugía</option>
+						</select>
+					</label>
+
+					<label id="fechas-viaje">
+						<span>Fechas del viaje:</span>
+						<input type="date" id="fecha-salida">
+						<input type="date" id="fecha-regreso">
+					</label>
+
+					<button id="cotizarBtn" type="button">Cotizar</button>
+
+				</form>
+
+			</div>
+
+			<div class="resultados" > 
+
+				<h3 id="mostrar-dias"></h3>
+
+			</div>
+
+		</main>
+
+		<script src="js/app.js"></script>
+
+	</body>
+
+</html>
