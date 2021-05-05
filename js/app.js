@@ -181,48 +181,48 @@ class Interwelt {
 
 		} 
 
-		return base;
+		return base + 1;
 	}
 
 	turista_17(dias){
 	
 		var precio = 0;
 
-		if (dias > 90) return null;
+		if (dias > 90) return 0;
 		
 		else if (dias > 0 && dias <= 5 ) {
-			return 10.46
+			return 11;
 		}
 
 		else if (dias >= 6 && dias <= 9) {
 
-			precio = this.ciclo(dias, 5 , 10.46,1.41)+1;
+			precio = this.ciclo(dias, 5 , 10.46,1.41);
 
 			return parseInt(precio);
 		}
 
 		else if (dias >= 10 && dias <= 15) {
 
-			precio = this.ciclo(dias,10, 21.68, 1.41)+1;
+			precio = this.ciclo(dias,10, 21.68, 1.41);
 			return parseInt(precio);
 		}
 
 		else if (dias >= 16 && dias <= 21) {
 
-			precio = this.ciclo(dias,16,35.70, 1.41) + 1;
+			precio = this.ciclo(dias,16,35.70, 1.41);
 			return parseInt(precio);
 		}
 
 
 		else if (dias >= 22 && dias <= 29) {
 
-			precio = this.ciclo(dias,22 ,45.05, 1.41) + 1;
+			precio = this.ciclo(dias,22 ,45.05, 1.41);
 			return parseInt(precio);
 		}
 
 		else if (dias >= 30 && dias <= 44) {
 
-			precio = this.ciclo(dias, 30, 54.93, 1.41) + 1 ;
+			precio = this.ciclo(dias, 30, 54.93, 1.41);
 			return parseInt(precio);
 		}
 
@@ -230,7 +230,7 @@ class Interwelt {
 
 		else if (dias >= 46 && dias <= 50) {
 
-			precio = this.ciclo(dias, 46, 1.66, 93.16) + 1;
+			precio = this.ciclo(dias, 46, 1.66, 93.16);
 			return parseInt(precio); 
 		}
 
@@ -240,11 +240,145 @@ class Interwelt {
 		
 		else if (dias >= 62 && dias <= 66) {
 
-			precio = this.ciclo(dias, 62, 104.22, 1.66) + 1;
+			precio = this.ciclo(dias, 62, 104.22, 1.66);
 			return parseInt(precio);
 		}
 
 		else if (dias >= 67 && dias <= 90) return 110;
+	}
+
+
+	internacional_27(dias){
+
+		var precio = 0; 
+
+		if(dias > 90) {
+			return 0
+		}
+
+		else if (dias > 0 && dias <= 5) return 15;
+
+		else if (dias >= 6 && dias <= 9) {
+
+			precio = this.ciclo(dias, 6, 14.96, 1.87);
+			return parseInt(precio);
+		}
+
+		else if ( dias >= 10 && dias <= 15 ){
+
+			precio = this.ciclo(dias, 10, 26.35, 1.87);
+			return parseInt(precio);
+		}
+
+		
+		else if ( dias >= 16 && dias <= 21 ){
+
+			precio = this.ciclo(dias, 16, 40.21, 1.87);
+			return parseInt(precio);
+		}
+
+		else if (dias >= 22 && dias <= 27 ) {
+
+			precio = this.ciclo(dias, 22, 50.49, 1.87);
+			return parseInt(precio);
+		}
+
+		else if ( dias >= 28 && dias <= 30 ) return 62;
+		
+		else if (dias >= 31 && dias <= 44 ) {
+
+			precio = this.ciclo(dias, 31, 63.58, 1.87);
+			return parseInt(precio);
+		}
+
+		else if (dias == 45) return 92;
+
+		else if ( dias >= 46 && dias <= 59 ) return 108;
+		
+		else if (dias >= 60 && dias <= 70 ) {
+
+			precio = this.ciclo(dias, 60, 110, 1.85);
+			return parseInt(precio);
+		}
+
+		else if ( dias >= 71 && dias <= 90 ) return 130;
+	}
+		
+
+	universal_50(dias){
+
+		var precio = 0; 
+
+		if ( dias > 90 ) return 0; 
+
+		else if (dias > 0 && dias <= 5) return 18;
+
+		else if (dias >= 6 && dias <= 9 ) {
+			precio = this.ciclo(dias, 6, 20.38, 2.62);
+			return parseInt(precio);
+		}
+
+		else if (dias >= 10 && dias <= 15 ) {
+			precio = this.ciclo(dias, 10, 29.92, 2.62);
+			return parseInt(precio);
+		}
+
+		else if (dias >= 16 && dias <= 21 ) {
+			precio = this.ciclo(dias, 16, 45.05, 2.62);
+			return parseInt(precio);
+		}
+
+		else if (dias >= 22 && dias <= 27 ) {
+			precio = this.ciclo(dias, 22, 59.84, 2.62);
+			return parseInt(precio);
+		}
+
+		else if (dias >= 28 && dias <= 30) return 73;
+
+		else if (dias >= 31 && dias <= 41 ) {
+			precio = this.ciclo(dias, 31, 75.55, 2.62);
+			return parseInt(precio);
+		}
+
+		else if (dias >= 42 && dias <= 45) return 105;
+
+		else if (dias == 46) return 126;
+
+		else if (dias >= 47 && dias <= 60) return 130;
+
+		else if (dias >= 61 && dias <= 63 ) {
+			precio = this.ciclo(dias, 61, 132.5, 3.08);
+			return parseInt(precio);
+		}
+
+		else if (dias >= 64 && dias <= 90) return 141;
+	}
+}
+
+
+class Vista {
+
+	constructor(f = 0,c = 2){
+
+		this.filas = f;
+		this.columnas = c;
+		this.contenedor = document.getElementById('salida-resultados');
+
+	}
+
+	mostrarCotizacion(plan,precio) {
+	
+		var cotizacion = document.createElement('li');
+
+		this.contenedor.appendChild(cotizacion);
+		//contenedor.appendChild(cotizacion);
+		
+		cotizacion.innerHTML = `Plan: ${plan}` + "<br>" + `${precio} usd`;
+	}
+
+	limpiar() {
+
+		this.contenedor.innerHTML = "";
 	}
 }
 
@@ -256,6 +390,7 @@ class Cotizador {
 		this.tas = new TAS();
 		this.asn = new AssistNet();
 		this.inter = new Interwelt();
+		this.vista = new Vista();
 	}
 
 	getData() {
@@ -278,22 +413,90 @@ class Cotizador {
 		//console.log(diff/(1000*60*60*24) + 1)
 	}
 
-	
-	mostrarDatos() {
-
-		var dias = document.getElementById('mostrar-dias');
-
-		dias.innerHTML = `Cotizacion ${this.form.destino} por ${String(this.calcDias())} dias`;
-
-	}
-
-
 	cotizar() {
 
 		this.getData();
-		this.mostrarDatos(); 
 
-		console.log(this.inter.turista_17(this.calcDias()).toFixed(2));
+		if (isNaN(this.calcDias())) {
+
+			alert('Inserta fechas');
+		}
+
+		else if (this.calcDias() <= 0) {
+			alert('Fechas erroneas');
+		}
+
+		else if (this.calcDias() > 0) {
+			var dias = this.calcDias();
+			var info = document.getElementById('mostrar-dias');
+
+			info.innerHTML = `Cotizacion ${this.form.destino} por ${String(dias)} dias`;
+
+			this.vista.limpiar();
+
+			switch(this.form.destino) {
+		
+				case 'Mundial':
+
+
+					//ASN
+					this.vista.mostrarCotizacion('Basic', this.asn.basic(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Classic', this.asn.classic(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Standard', this.asn.standard(dias).toFixed(2));
+	
+					//Interwelt
+					
+					this.vista.mostrarCotizacion('Turista 17', this.inter.turista_17(dias));
+					this.vista.mostrarCotizacion('Internacional 27', this.inter.internacional_27(dias));
+					this.vista.mostrarCotizacion('Universal 50', this.inter.universal_50(dias));
+
+					//TAS
+
+					this.vista.mostrarCotizacion('Ideal', this.tas.ideal(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Gold', this.tas.gold(dias).toFixed(2));
+
+					break;
+
+				case 'Europa':
+
+					this.vista.mostrarCotizacion('Classic', this.asn.classic(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Standard', this.asn.standard(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Universal 50', this.inter.universal_50(dias));
+					this.vista.mostrarCotizacion('Ideal', this.tas.ideal(dias).toFixed(2));
+
+					break;
+
+
+				case 'Chile':
+
+					this.vista.mostrarCotizacion('Classic', this.asn.classic(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Standard', this.asn.standard(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Ideal', this.tas.ideal(dias).toFixed(2));
+
+					break;
+
+				case 'Costa Rica':
+
+					this.vista.mostrarCotizacion('Ideal', this.tas.ideal(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Gold', this.tas.gold(dias).toFixed(2));
+
+					break;
+
+				case 'Cirugía': 
+
+					this.vista.mostrarCotizacion('Turista 17', this.inter.turista_17(dias));
+					this.vista.mostrarCotizacion('Internacional 27', this.inter.internacional_27(dias));
+					this.vista.mostrarCotizacion('Universal 50', this.inter.universal_50(dias));
+
+					break;
+
+				default:
+
+					break;
+			}
+
+		}
+
 	}
 }
 

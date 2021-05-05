@@ -12,7 +12,10 @@
 	
 	<body> 
 
-		<header></header>
+		<header>
+			<!--<h1 class="header-title">Compara Assist</h1>-->
+			<img id="logo" src="assest/img/icons/logo-compara-assist.svg"/>
+		</header>
 
 		<main class="container">
 
@@ -33,8 +36,8 @@
 
 					<label id="fechas-viaje">
 						<span>Fechas del viaje:</span>
-						<input type="date" id="fecha-salida">
-						<input type="date" id="fecha-regreso">
+						<input type="date" id="fecha-salida" required>
+						<input type="date" id="fecha-regreso" required>
 					</label>
 
 					<button id="cotizarBtn" type="button">Cotizar</button>
@@ -46,6 +49,8 @@
 			<div class="resultados" > 
 
 				<h3 id="mostrar-dias"></h3>
+	
+				<ul id="salida-resultados"></ul>
 
 			</div>
 
