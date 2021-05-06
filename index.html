@@ -8,6 +8,7 @@
 		<meta name="description" content="Cotizador automatizado de las proncopales coberturas ofrecidad por Compara Assist">
 
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="assest/img/favicon.png">
 	</head>
 	
 	<body> 
@@ -19,7 +20,11 @@
 
 		<main class="container">
 
-			<div class="Cotizador">
+			<div class="cotizador">
+			
+				<center>
+
+					<h1 id="cotizador-title"><span style="color: var(--purple);">Cotizador</span> Compara Assist</h1>
 
 				<form class="cotizador_form">
 					
@@ -36,19 +41,19 @@
 
 					<label id="fechas-viaje">
 						<span>Fechas del viaje:</span>
-						<input type="date" id="fecha-salida" required>
-						<input type="date" id="fecha-regreso" required>
+						<input type="date" id="fecha-salida" class="cotizador_fecha"  required>
+						<input type="date" id="fecha-regreso" class="cotizador_fecha" required>
 					</label>
 
-					<button id="cotizarBtn" type="button">Cotizar</button>
+					<button id="cotizarBtn" type="button" class="cotizador_btn">Cotizar</button>
 
 				</form>
-
+				</center>
 			</div>
 
 			<div class="resultados" > 
 
-				<h3 id="mostrar-dias"></h3>
+				<h2 id="mostrar-dias"></h2>
 	
 				<ul id="salida-resultados"></ul>
 

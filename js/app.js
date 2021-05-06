@@ -373,7 +373,9 @@ class Vista {
 		this.contenedor.appendChild(cotizacion);
 		//contenedor.appendChild(cotizacion);
 		
-		cotizacion.innerHTML = `Plan: ${plan}` + "<br>" + `${precio} usd`;
+		cotizacion.innerHTML ='Plan:' + '<span style = "color:var(--pink)">' + String(plan) + '</span>' +  
+			"<br>" + 
+			'<span style="color:var(--black-text); font-size:1.1rem">' + String(precio) + ' usd</span>';
 	}
 
 	limpiar() {
@@ -430,7 +432,7 @@ class Cotizador {
 			var dias = this.calcDias();
 			var info = document.getElementById('mostrar-dias');
 
-			info.innerHTML = `Cotizacion ${this.form.destino} por ${String(dias)} dias`;
+			info.innerHTML = `Cotización ${this.form.destino} por `+ '<span style = "color:var(--pink)">'+`${String(dias)}`+'</span>'+` días`;
 
 			this.vista.limpiar();
 
@@ -484,6 +486,9 @@ class Cotizador {
 
 				case 'Cirugía': 
 
+					if(dias>90) {
+						alert('Son más de 90 días');
+					}
 					this.vista.mostrarCotizacion('Turista 17', this.inter.turista_17(dias));
 					this.vista.mostrarCotizacion('Internacional 27', this.inter.internacional_27(dias));
 					this.vista.mostrarCotizacion('Universal 50', this.inter.universal_50(dias));
