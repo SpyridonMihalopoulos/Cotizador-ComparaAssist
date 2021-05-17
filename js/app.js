@@ -468,6 +468,13 @@ class Cotizador {
 
 					break;
 
+				case 'USA': 
+
+					this.vista.mostrarCotizacion('Classic', this.asn.classic(dias).toFixed(2));
+					this.vista.mostrarCotizacion('Universal 50', this.inter.universal_50(dias));
+					this.vista.mostrarCotizacion('Ideal', this.tas.ideal(dias).toFixed(2));
+
+					break;
 
 				case 'Chile':
 
